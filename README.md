@@ -1,7 +1,7 @@
 # ElegansBot
 Newtonian Mechanics Model for C. elegans Locomotion
 
-The source code will be uploaded shortly. The recommended citation method for this work will be provided once its DOI is assigned (currently in process).
+Once its DOI is assigned, the source code will be uploaded and the recommended citation method for this work will be provided (currently in process).
 
 - Demo: https://taegonchung.github.io/elegansbot/
     - Use the sliders to observe the worm's movement changes.
