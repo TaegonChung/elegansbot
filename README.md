@@ -1,5 +1,6 @@
 # ElegansBot
-Newtonian Mechanics Model for C. elegans Locomotion
+Newtonian Mechanics Model for C. elegans Locomotion  
+Demo: https://taegonchung.github.io/elegansbot/
 
 ## Requirements
 - Python (version 3)
@@ -20,7 +21,7 @@ Newtonian Mechanics Model for C. elegans Locomotion
 1. Download the `elegansbot.py` file into your project directory.
 2. Use `from elegansbot import Worm` to import the library.
 3. Refer to the detailed instructions in the docstring of the "Worm" class. Below is a brief overview of potential use-cases:
-    - If you wish to use ElegansBot with a pre-determined $\theta_{\mathrm{ctrl}}$ (target body angle), it's recommended to utilize the "run" method of an instance of the "Worm" class.
+    - If you wish to use ElegansBot with a pre-determined $\theta_{\mathrm{ctrl}}$ (target body angle or kymogram), it's recommended to utilize the "run" method of an instance of the "Worm" class.
     - If you want to determine $\theta_{\mathrm{ctrl}}$ dynamically, it's advised to update "act" (equivalent to theta_ctrl) manually and then invoke the "steps" method on an instance of the "Worm" class.
 
 ## Web Demo
