@@ -1,6 +1,11 @@
 # ElegansBot
 Newtonian Mechanics Model for C. elegans Locomotion  
-Demo: https://taegonchung.github.io/elegansbot/
+
+## Web Demo
+- https://taegonchung.github.io/elegansbot/
+    - Use the sliders to observe the worm's movement changes.
+        - Water-Agar Slider: Adjust this to modify the ground's frictional coefficients.
+        - Swim-Crawl Slider: This slider alters the period and linear wave number of C. elegans' locomotion.
 
 ## Requirements
 - Python (version 3)
@@ -11,24 +16,23 @@ Demo: https://taegonchung.github.io/elegansbot/
 
 ## Tested Environment
 - Windows 10
-- python 3.8.18
-- numpy 1.19.0
-- numba 0.54.0
-    - scipy 1.5.0
-- matplotlib 3.4.2
+- Python 3.8.18
+- NumPy 1.19.0
+- Numba 0.54.0
+    - SciPy 1.5.0
+- Matplotlib 3.4.2
 
 ## Usage
-1. Download the `elegansbot.py` file into your project directory.
+1. Install library by `pip install elegansbot` or Download the `elegansbot.py` file into your project directory.
 2. Use `from elegansbot import Worm` to import the library.
 3. Refer to the detailed instructions in the docstring of the "Worm" class. Below is a brief overview of potential use-cases:
-    - If you wish to use ElegansBot with a pre-determined $\theta_{\mathrm{ctrl}}$ (target body angle or kymogram), it's recommended to utilize the "run" method of an instance of the "Worm" class.
     - If you want to determine $\theta_{\mathrm{ctrl}}$ dynamically, it's advised to update "act" (equivalent to theta_ctrl) manually and then invoke the "steps" method on an instance of the "Worm" class.
+    - If you wish to use ElegansBot with a pre-determined $\theta_{\mathrm{ctrl}}$ (target body angle or kymogram), it's recommended to utilize the "run" method of an instance of the "Worm" class.
 
-## Web Demo
-- https://taegonchung.github.io/elegansbot/
-    - Use the sliders to observe the worm's movement changes.
-        - Water-Agar Slider: Adjust this to modify the ground's frictional coefficients.
-        - Swim-Crawl Slider: This slider alters the period and linear wave number of C. elegans' locomotion.
+## Examples
+You may check out examples in the "examples/" directory.  
+Try running `python examples/example01.py` for dynamic input  
+or `python examples/example02.py` for kymogram input  
 
 ## Local Demo
 Execute the following command:
