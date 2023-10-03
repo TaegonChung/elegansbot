@@ -23,7 +23,7 @@ Newtonian Mechanics Model for C. elegans Locomotion
     - Matplotlib 3.4.2
 
 ## Usage
-1. Install library by `pip install elegansbot` or Download the `elegansbot.py` file into your project directory.
+1. Install library by `pip install elegansbot`.
 2. Use `from elegansbot import Worm` to import the library.
 3. Refer to the detailed instructions in the docstring of the "Worm" class. Below is a brief overview of potential use-cases:
     - If you want to determine $\theta_{\mathrm{ctrl}}$ dynamically, it's advised to update "act" (equivalent to theta_ctrl) manually and then invoke the "steps" method on an instance of the "Worm" class.
