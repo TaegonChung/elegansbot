@@ -30,7 +30,7 @@ Newtonian Mechanics Model for C. elegans Locomotion
     - If you wish to use ElegansBot with a pre-determined $\theta_{\mathrm{ctrl}}$ (kymogram), it's recommended to utilize the "run" method of an instance of the "Worm" class.
 
 ## Examples
-You may check out examples in the "examples/" directory.  
+You may want to check out examples in the "examples/" directory.  
 Try running `python examples/example01.py` for dynamic input  
 or `python examples/example02.py` for kymogram input.  
 
