@@ -1,6 +1,12 @@
 # ElegansBot
 Newtonian Mechanics Model for C. elegans Locomotion  
 
+https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf3-e83e2ce5ed81
+
+(Left: Experimental video from [1], Right: ElegansBot)
+```
+[1] Broekmans, O. D., Rodgers, J. B., Ryu, W. S., & Stephens, G. J. (2016). Resolving coiled shapes reveals new reorientation behaviors in C. elegans. ELife, 5, e17227. https://doi.org/10.7554/eLife.17227
+```
 ## Web Demo
 - https://taegonchung.github.io/elegansbot/
     - Use the sliders to observe the worm's movement changes.
