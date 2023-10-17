@@ -37,8 +37,15 @@ https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf
 
 ## Examples
 You may want to check out examples in the "examples/" directory.  
-Try running `python examples/example01.py` for dynamic input  
-or `python examples/example02.py` for kymogram input.  
+For instance, you can execute the example code with:
+
+`python examples/example01.py`
+
+Files:
+- examples/example01.py : Dynamic input  
+- examples/example02.py : Kymogram input  
+- examples/example03.py : Kymogram input (Delta-turn)
+- examples/example04.py : Kymogram input (Omega-turn)
 
 ## Local Demo
 Execute the following command:
