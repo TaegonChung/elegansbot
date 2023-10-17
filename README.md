@@ -38,7 +38,6 @@ https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf
 ## Examples
 You may want to check out examples in the "examples/" directory.  
 For instance, you can execute the example code with:
-
 `python examples/example01.py`
 
 Files:
