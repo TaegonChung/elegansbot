@@ -44,8 +44,8 @@ For instance, you can execute the example code with:
 Files:
 - examples/example01.py : Dynamic input  
 - examples/example02.py : Kymogram input  
-- examples/example03.py : Kymogram input (Delta-turn)
-- examples/example04.py : Kymogram input (Omega-turn)
+- examples/example03.py : Kymogram input (Omega-turn)
+- examples/example04.py : Kymogram input (Delta-turn)
 
 ## Local Demo
 Execute the following command:
