@@ -49,7 +49,7 @@ Files:
 ## Local Demo
 Execute the following command:
 ```
-python elegansbot.py
+python -m elegansbot.elegansbot
 ```
 
 ## File Description
