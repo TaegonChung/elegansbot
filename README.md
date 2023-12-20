@@ -58,7 +58,7 @@ python -m elegansbot.elegansbot
 - `Video_S2_delta_turn.avi` : Another video from the supplementary section of our paper.
 
 ## Citing ElegansBot
-- If ElegansBot has been significant in your research, and you would like to acknowledge this work in your academic publication, please consider citing the following paper (this citation may be updated in the future):
+- If ElegansBot has been significant in your research, and you would like to acknowledge this work in your academic publication, we suggest citing [the following paper](https://elifesciences.org/reviewed-preprints/92562):
 ```
-Chung, T., Chang, I., & Kim, S. (2023). ElegansBot: Development of equation of motion deciphering locomotion including omega turns of Caenorhabditis elegans (p. 2023.09.26.559644). bioRxiv. https://doi.org/10.1101/2023.09.26.559644
+Chung Taegon, Chang Iksoo, Kim Sangyeol (2023) ElegansBot: Development of equation of motion deciphering locomotion including omega turns of Caenorhabditis elegans eLife 12:RP92562 https://doi.org/10.7554/eLife.92562
 ```
