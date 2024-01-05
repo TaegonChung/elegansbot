@@ -45,6 +45,7 @@ Files:
 - examples/example02.py : Kymogram input  
 - examples/example03.py : Kymogram input (Omega-turn)
 - examples/example04.py : Kymogram input (Delta-turn)
+- examples/example05.py : Frictional forces, power, and behavioral classification
 
 ## Local Demo
 Execute the following command:
