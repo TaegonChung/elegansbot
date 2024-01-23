@@ -18,8 +18,9 @@ https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf
 - NumPy
 - Numba
     - SciPy (required as a dependency of numba)
-- Matplotlib
-(Optional)
+- Matplotlib  
+
+**(Optional)**
 - FFmpeg (for saving a video.)
 - Jupyter Notebook version 6 (for interactive coding. "backend_nbagg" is no longer supported in version 7.)
 
