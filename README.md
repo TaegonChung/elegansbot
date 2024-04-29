@@ -65,5 +65,5 @@ python -m elegansbot.elegansbot
 ## Citing ElegansBot
 - If ElegansBot has been significant in your research, and you would like to acknowledge this work in your academic publication, we suggest citing [the following paper](https://elifesciences.org/reviewed-preprints/92562):
 ```
-Chung Taegon, Chang Iksoo, Kim Sangyeol (2023) ElegansBot: Development of equation of motion deciphering locomotion including omega turns of Caenorhabditis elegans eLife 12:RP92562 https://doi.org/10.7554/eLife.92562
+Taegon Chung, Iksoo Chang, Sangyeol Kim (2024) Development of equation of motion deciphering locomotion including omega turns of Caenorhabditis elegans eLife 12:RP92562 https://doi.org/10.7554/eLife.92562
 ```
