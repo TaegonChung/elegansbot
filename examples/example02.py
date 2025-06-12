@@ -37,7 +37,17 @@ env.run(kymogram, 1/fps)
 
 env.plot_overview()
 env.plot_speed_graph()
-# %matplotlib notebook # uncomment this line if the code runs in jupyter-notebook.
+
 env.play_animation(speed_playback=0.5)
-# %matplotlib inline # uncomment this if it's in jupyter-notebook.
-# env.save_animation('demo.mp4') # FFMPEG is required for saving animation.
+
+## If you are using jupyter-notebook 6, use the following instead.
+# %matplotlib notebook
+# env.play_animation(speed_playback=0.5)
+# %matplotlib inline
+
+## If you are using jupyter-notebook 7, use the following instead.
+# %matplotlib tk
+# env.play_animation(speed_playback=0.5)
+# %matplotlib inline
+
+env.save_animation('demo.mp4') # FFMPEG is required for saving animation.

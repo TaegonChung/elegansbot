@@ -22,15 +22,10 @@ https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf
 
 **(Optional)**
 - FFmpeg (for saving a video.)
-- Jupyter Notebook version 6 (for interactive coding. "backend_nbagg" is no longer supported in version 7.)
+- Jupyter Notebook (for interactive block coding)
 
 ## Tested Environment
-- Windows 10
-    - Python 3.8.18
-    - NumPy 1.19.0
-    - Numba 0.54.0
-        - SciPy 1.5.0
-    - Matplotlib 3.4.2
+Please, check "https://github.com/TaegonChung/ElegansBot/tested_environments.txt".  
 
 ## Usage
 1. Install library by `pip install elegansbot`.

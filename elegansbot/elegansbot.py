@@ -3,8 +3,6 @@
 import time
 import numpy as np
 from numba import njit
-from numba import int64, float64, boolean
-from numba.experimental import jitclass
 import matplotlib.pyplot as plt
 import matplotlib.animation as mpl_animation
 from matplotlib.transforms import Bbox
@@ -14,7 +12,11 @@ def is_notebook():
     try:
         shell = get_ipython().__class__.__name__
         if shell == 'ZMQInteractiveShell':
-            return True
+            try:
+                from notebook import __version__ as v
+                return v.startswith("6.")
+            except ImportError:
+                return False
         else:
             return False
     except NameError:
@@ -110,7 +112,7 @@ def plot_outline_n_trajectory(
     x_ventral, y_ventral = x_tip-dx, y_tip-dy
 
     if ax.lines:
-        ax.lines[0].set_data(x_tip[0], y_tip[0])
+        ax.lines[0].set_data([x_tip[0]], [y_tip[0]])
         ax.lines[1].set_data(x_dorsal, y_dorsal)
         ax.lines[2].set_data(x_ventral, y_ventral)
         ax.lines[3].set_data([x_dorsal[0], x_ventral[0]], [y_dorsal[0], y_ventral[0]])
@@ -133,7 +135,7 @@ def plot_outline_n_trajectory(
         ax.set_aspect(1)
         
         lw = 1
-        ax.plot(x_tip[0], y_tip[0], 'o', color=[1, 1, 0], label='Head position', linewidth=lw, markersize=lw*10)
+        ax.plot([x_tip[0]], [y_tip[0]], 'o', color=[1, 1, 0], label='Head position', linewidth=lw, markersize=lw*10)
         ax.plot(x_dorsal, y_dorsal, '-', color=[.8, 0, 0], label='Dorsal', linewidth=lw)
         ax.plot(x_ventral, y_ventral, '-', color=[0, 0, 1], label="Ventral", linewidth=lw)
         ax.plot([x_dorsal[0], x_ventral[0]], [y_dorsal[0], y_ventral[0]], '-',
@@ -427,6 +429,7 @@ class Worm:
         polarity_clockwise=False,
         scale_friction=1,
         scale_muscle=1,
+        should_use_linux_native_ffmpeg=False,
     ):
         """
         Caenorhabditis elegans kinetic simulator.
@@ -465,9 +468,9 @@ class Worm:
                              This variable is False when cross product of a vector from posterior end
                              to anterior end of i-rod and a vector from ventral side to dorsal side of i-rod
                              directs out of the screen, which means counter-clockwise direction.
-        scale_friction : scaling factor for both perpendicular and parallel frictional constant (default: 1)
-        scale_muscle : scaling factor for both tortional elastic and tortional damping constant (default: 1)
-
+        scale_friction : Scaling factor for both perpendicular and parallel frictional constant (default: 1)
+        scale_muscle : Scaling factor for both tortional elastic and tortional damping constant (default: 1)
+        should_use_linux_native_ffmpeg : Set this True when you have problem with ffmpeg in Linux environment. (default: False)
 
         Attributes
         ----------
@@ -492,10 +495,20 @@ class Worm:
 
         env.plot_overview()
         env.plot_speed_graph()
-        # %matplotlib notebook # uncomment this line if the code runs in jupyter-notebook.
+
         env.play_animation(speed_playback=0.5)
-        # %matplotlib inline # uncomment this if it's in jupyter-notebook.
-        # env.save_animation('demo.mp4') # FFMPEG is required for saving animation.
+
+        ## If you are using jupyter-notebook 6, use the following instead.
+        # %matplotlib notebook
+        # env.play_animation(speed_playback=0.5)
+        # %matplotlib inline
+
+        ## If you are using jupyter-notebook 7, use the following instead.
+        # %matplotlib tk
+        # env.play_animation(speed_playback=0.5)
+        # %matplotlib inline
+
+        env.save_animation('demo.mp4') # FFMPEG is required for saving animation.
 
 
         Example usage 2: Kymogram input
@@ -514,10 +527,20 @@ class Worm:
 
         env.plot_overview()
         env.plot_speed_graph()
-        # %matplotlib notebook # uncomment this line if the code runs in jupyter-notebook.
+
         env.play_animation(speed_playback=0.5)
-        # %matplotlib inline # uncomment this if it's in jupyter-notebook.
-        # env.save_animation('demo.mp4') # FFMPEG is required for saving animation.
+
+        ## If you are using jupyter-notebook 6, use the following instead.
+        # %matplotlib notebook
+        # env.play_animation(speed_playback=0.5)
+        # %matplotlib inline
+
+        ## If you are using jupyter-notebook 7, use the following instead.
+        # %matplotlib tk
+        # env.play_animation(speed_playback=0.5)
+        # %matplotlib inline
+
+        env.save_animation('demo.mp4') # FFMPEG is required for saving animation.
         """
         
         # time
@@ -584,9 +607,12 @@ class Worm:
             self.record_init(simTime, dt_snapshot)
         if type(theta) != type(None):
             self.theta = theta
-        
+
         # disabling creation of new attribute for avoiding making any related mistakes.
         self.__is_new_attr_forbidden = True
+
+        if should_use_linux_native_ffmpeg:
+            plt.rcParams['animation.ffmpeg_path'] = '/usr/bin/ffmpeg'
 
     def __setattr__(self, key, value):
         if self.__is_new_attr_forbidden and not hasattr(self, key):
@@ -980,7 +1006,10 @@ class Worm:
             blit=True,
         )
         anim.save(file_name)
-        plt.close(fig)
+        try:
+            plt.close(fig)
+        except:
+            pass
 
     def plot_overview(env, n_row=6, dpi=80):
         """
