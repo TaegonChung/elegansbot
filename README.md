@@ -1,4 +1,10 @@
 # ElegansBot
+
+[![PyPI Version](https://img.shields.io/pypi/v/elegansbot.svg)](https://pypi.org/project/elegansbot/)
+[![PyPI Downloads](https://img.shields.io/pypi/dm/elegansbot.svg)](https://pypi.org/project/elegansbot/)
+[![Conda Version](https://img.shields.io/conda/vn/conda-forge/elegansbot.svg)](https://anaconda.org/conda-forge/elegansbot)
+[![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/elegansbot.svg)](https://anaconda.org/conda-forge/elegansbot)
+
 Newtonian Mechanics Model for C. elegans Locomotion  
 
 https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf3-e83e2ce5ed81
@@ -28,7 +34,7 @@ https://github.com/TaegonChung/elegansbot/assets/29942136/ca554471-4397-4e19-bbf
 Please, check "https://github.com/TaegonChung/ElegansBot/tested_environments.txt".  
 
 ## Usage
-1. Install library by `pip install elegansbot`.
+1. Install library by `pip install elegansbot` or `conda install conda-forge::elegansbot`.
 2. Use `from elegansbot import Worm` to import the library.
 3. Refer to the detailed instructions in the docstring of the "Worm" class. Below is a brief overview of potential use-cases:
     - If you want to determine $\theta_{\mathrm{ctrl}}$ dynamically, it's advised to update "act" (equivalent to theta_ctrl) manually and then invoke the "steps" method on an instance of the "Worm" class.
